@@ -79,7 +79,7 @@ public class Robot extends LoggedRobot {
     mCamera = new PhotonCamera(instance, "OV9281");
     mCamList.add(new Pair<PhotonCamera, Transform3d>(mCamera, new Transform3d()));
 
-    mPoseEstimator = new PhotonPoseEstimator(mTags, PoseStrategy.CLOSEST_TO_REFERENCE_POSE, mCamera, new Transform3d());
+    mPoseEstimator = new PhotonPoseEstimator(mTags, PoseStrategy.MULTI_TAG_PNP, mCamera, new Transform3d());
 
     Logger.getInstance().recordOutput("Apriltags",
       FieldConstants.tag1.pose,
